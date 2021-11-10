@@ -17,9 +17,13 @@ public class Persona {
 	public Persona() {
 	}
 
-	public void imprimirPerfil() {
-		System.out.println("\nInformacion \n\n" +"id=" + id + "\nNombre=" + nombre + "\nApellido=" + apellido
-				+ "\nCorreoElectronico=" + correoElectronico );
+	public void imprimirPerfil(double calificacion, boolean calf) {
+		
+		String calfs = calf ? correoElectronico + "\nCalificacion = " + calificacion : "";
+		System.out.println("-----------------");
+		System.out.println("\nInformacion \n\n" +"id = " + id + "\nNombre = " + nombre + "\nApellido = " + apellido
+				+ "\nCorreoElectronico = " + correoElectronico + calfs);
+		System.out.println("-----------------");
 	}
 
 	public int getId() {

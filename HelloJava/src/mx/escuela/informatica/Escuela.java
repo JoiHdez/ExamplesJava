@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Escuela {
 	static Scanner sc = new Scanner(System.in);
+	static Scanner sc1 = new Scanner(System.in);
 
 	public static void main(String[] args) {
 
@@ -15,6 +16,7 @@ public class Escuela {
 			System.out.println("2. Registrar maestro");
 			System.out.println("3. Registrar tutor");
 			System.out.println("4. Salir");
+			System.out.println("-----------------");
 
 			opcion = sc.nextInt();
 			try {
@@ -32,6 +34,7 @@ public class Escuela {
 				switch (opcion) {
 
 				case 1:
+					int opcionAlum = 0;
 	                
 	                Alumno alumno = new Alumno();
 	                alumno.setId(id);
@@ -44,24 +47,36 @@ public class Escuela {
 	    			System.out.println("1. Imprimir datos Alumno");
 	    			System.out.println("2. Guarda una calificacion");
 	    			System.out.println("3. Salir");
-	                
-	                switch(opcion) {
-	                case 1:
-	                	alumno.imprimirPerfil();
-	                case 2:
-	                	System.out.print("Ingrese una calificación: ");
-	                	double calificacion = sc.nextDouble();
-	                	alumno.guardarCalificacion(calificacion);
-	                	alumno.imprimirPerfil();
-		            
-
-	                case 3: 
-
-	                default:
-	                	break;
+	    			System.out.println("-----------------");
+	    			opcionAlum = sc1.nextInt();
+	    			
+	                switch(opcionAlum) {
+		                case 1:
+		                	alumno.imprimirPerfil(0,false);
+		                case 2:
+		                	int opcionClaf = 0;
+		                	System.out.print("Ingrese una calificacion: ");
+		                	double calificacion = sc.nextDouble();
+		                	
+		                	System.out.println("-----------------");
+			    			System.out.println("Alumno");
+			    			System.out.println("1. Imprimir datos Alumno");
+			    			System.out.println("2. Salir");
+			    			System.out.println("-----------------");
+			    			opcionClaf = sc.nextInt();
+		                	
+			    			 switch(opcionClaf) {
+				                case 1:
+				                	alumno.imprimirPerfil(calificacion,true);
+				                case 2:
+				                	break;
+				                default:
+				                	break;
+			    			 }
+		                case 3: 
+		                	break;
 	                }
 	                
-	                break;
 				case 2:
 					break;
 				case 3:
@@ -70,7 +85,6 @@ public class Escuela {
 					break;
 				default:
 					break;
-
 				}
 			} catch (Exception e) {
 

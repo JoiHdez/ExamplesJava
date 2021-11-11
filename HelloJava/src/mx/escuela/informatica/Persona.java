@@ -17,11 +17,11 @@ public class Persona {
 	public Persona() {
 	}
 
-	public void imprimirPerfil(double calificacion, boolean calf) {
+	public void imprimirPerfil(double calificacion, boolean calf, String titulo) {
 		
-		String calfs = calf ? correoElectronico + "\nCalificacion = " + calificacion : "";
+		String calfs = calf ? "\nCalificacion = " + calificacion : "";
 		System.out.println("-----------------");
-		System.out.println("\nInformacion \n\n" +"id = " + id + "\nNombre = " + nombre + "\nApellido = " + apellido
+		System.out.println("\nInformacion " + titulo +"\n\n" +"id = " + id + "\nNombre = " + nombre + "\nApellido = " + apellido
 				+ "\nCorreoElectronico = " + correoElectronico + calfs);
 		System.out.println("-----------------");
 	}
